@@ -1,8 +1,8 @@
-.PHONY: default vim-plug install update
+.PHONY: default install link-file link-folder update vim-plug
 
-default: install-folder install
+default: install
 
-standalone: install
+install: link-folder link-file vim-plug plugins
 
 vim-plug:
 	@echo "==> Downloading vim-plug"
@@ -10,13 +10,15 @@ vim-plug:
 	@$(DLCMD) $(CURDIR)/autoload/plug.vim \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-install: vim-plug plugins
-	@echo "==> Symlinking Vim config files into $(HOME)"
+link-file:
+	@echo "==> Symlinking Vim config file into $(HOME)"
 	@ln -sfn "$(CURDIR)/.vimrc" "$(HOME)/.vimrc"
 
-install-folder:
+link-folder:
 	@echo "==> Symlinking Vim folder into $(HOME)"
-	@ln -sfn "$(CURDIR)" "$(HOME)/.vim"
+	@if [ "$(CURDIR)" != "$(HOME)/.vimrc" ]; then				\
+		ln -sfn "$(CURDIR)" "$(HOME)/.vim";				\
+	 fi
 
 plugins: vim-plug
 	@echo "==> Installing plugins"
