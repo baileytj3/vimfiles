@@ -6,5 +6,5 @@ My vimfiles for the world to see.
 
 ```
 $ cd vimfiles
-$ make standalone
+$ make
 ```
