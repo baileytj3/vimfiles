@@ -41,7 +41,7 @@ WGET := $(shell command -v wget;)
 CURL := $(shell command -v curl;)
 
 ifdef WGET
-	DLCMD := $(WGET) -o
+	DLCMD := $(WGET) -O
 else ifdef CURL
 	DLCMD := $(CURL) -sLo
 else
