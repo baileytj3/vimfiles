@@ -31,46 +31,49 @@ endif
 "                                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.vim/plugged')
+" Make sure we aren't in vi. Plug is not compatible with vi.
+if !has("compatible")
+    call plug#begin('~/.vim/plugged')
 
-" Status line plugin
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-    " Set the separaters to empty string instead of the fancy filled in < >
-    " that don't come in the default font set.
-    let g:airline_left_sep = ""
-    let g:airline_left_alt_sep = ""
-    let g:airline_right_sep = ""
-    let g:airline_right_alt_sep = ""
+    " Status line plugin
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+        " Set the separaters to empty string instead of the fancy filled in < >
+        " that don't come in the default font set.
+        let g:airline_left_sep = ""
+        let g:airline_left_alt_sep = ""
+        let g:airline_right_sep = ""
+        let g:airline_right_alt_sep = ""
 
-    " Enable the list of buffers
-    let g:airline#extensions#tabline#enabled = 1
+        " Enable the list of buffers
+        let g:airline#extensions#tabline#enabled = 1
 
-    " Show just the filename
-    let g:airline#extensions#tabline#fnamemod = ':t'
+        " Show just the filename
+        let g:airline#extensions#tabline#fnamemod = ':t'
 
-    " Set a theme
-    let g:airline_theme='murmur'
-    
-" Git Gutter
-Plug 'airblade/vim-gitgutter'
-    " Quick Help
-    " ]c - Jump to next hunk
-    " [c - Jump to previous hunk
-    " <leader>hs - Stage hunk
-    " <leader>hr - Unstage hunk
-    " <leader>hv - Preview hunk
+        " Set a theme
+        let g:airline_theme='murmur'
+        
+    " Git Gutter
+    Plug 'airblade/vim-gitgutter'
+        " Quick Help
+        " ]c - Jump to next hunk
+        " [c - Jump to previous hunk
+        " <leader>hs - Stage hunk
+        " <leader>hr - Unstage hunk
+        " <leader>hv - Preview hunk
 
-" Syntax Checking
-Plug 'scrooloose/syntastic'
+    " Syntax Checking
+    Plug 'scrooloose/syntastic'
 
-" NERD Tree
-Plug 'scrooloose/nerdtree'
+    " NERD Tree
+    Plug 'scrooloose/nerdtree'
 
-" Display indentation levels with vertical lines
-Plug 'Yggdroot/indentLine'
+    " Display indentation levels with vertical lines
+    Plug 'Yggdroot/indentLine'
 
-call plug#end()
+    call plug#end()
+endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
