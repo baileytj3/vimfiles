@@ -7,8 +7,10 @@ install: link-folder link-file vim-plug plugins
 vim-plug:
 	@echo "==> Downloading vim-plug"
 	@mkdir -p $(CURDIR)/autoload
-	@$(DLCMD) $(CURDIR)/autoload/plug.vim \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	@if [ ! -e "$(CURDIR)/autoload/plug.vim" ]; then		\
+		$(DLCMD) $(CURDIR)/autoload/plug.vim			\
+			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; \
+	fi
 
 link-file:
 	@echo "==> Symlinking Vim config file into $(HOME)"
@@ -16,7 +18,7 @@ link-file:
 
 link-folder:
 	@echo "==> Symlinking Vim folder into $(HOME)"
-	@if [ "$(CURDIR)" != "$(HOME)/.vimrc" ]; then				\
+	@if [ "$(CURDIR)" != "$(HOME)/.vimrc" ]; then		\
 		ln -sfn "$(CURDIR)" "$(HOME)/.vim";				\
 	 fi
 
