@@ -68,9 +68,20 @@ if !has("compatible")
 
     " NERD Tree
     Plug 'scrooloose/nerdtree'
+        " Ignore .pyc files
+        let g:NERDTreeIgnore = ['\.pyc$']
+        " Prevent switching to an open buffer while focus is on NERDTree
+        autocmd FileType nerdtree noremap <buffer> <leader>h <nop>
+        autocmd FileType nerdtree noremap <buffer> <leader>l <nop>
+
+    " NERD Commenter
+    Plug 'scrooloose/nerdcommenter'
 
     " Display indentation levels with vertical lines
     Plug 'Yggdroot/indentLine'
+
+    " Show number of matches when searching
+    Plug 'henrik/vim-indexed-search'
 
     call plug#end()
 endif
