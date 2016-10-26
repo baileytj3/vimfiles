@@ -73,6 +73,9 @@ if !has("compatible")
         " Prevent switching to an open buffer while focus is on NERDTree
         autocmd FileType nerdtree noremap <buffer> <leader>h <nop>
         autocmd FileType nerdtree noremap <buffer> <leader>l <nop>
+        autocmd bufenter * if (winnr("$") == 1
+                    \ && exists("b:NERDTree")
+                    \ && b:NERDTree.isTabTree()) | q | endif
 
     " NERD Commenter
     Plug 'scrooloose/nerdcommenter'
