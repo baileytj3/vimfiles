@@ -153,7 +153,7 @@ set lazyredraw              " Don't redraw screen for untyped commands
 set nostartofline           " Keep the cursor in the same column with C-U, C-D
 set scrolloff=3             " Number of lines to keep above and below cursor
 set tags=./tags;/           " Look in current directory and work up for tags file
-set textwidth=80            " Sets how wide text should be
+set textwidth=79            " Sets how wide text should be
 set title                   " Terminal inherits its title from vim
 set ttyfast                 " Faster redraw, sends more characters to be redrawn at once
 set whichwrap+=<,>,h,l,[,]  " Allow the cursor to wrap lines
