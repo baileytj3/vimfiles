@@ -160,6 +160,7 @@ set whichwrap+=<,>,h,l,[,]  " Allow the cursor to wrap lines
 set ignorecase              " Ignore charater case when searching
 set smartcase               " Overrides ignore case if search term has capital
 set autowrite
+set backspace=2             " Allows backspace to function as expected
 
 " Disable things that anger crontab (at least on MacOSX)
 if $VIM_CRONTAB == "true"
