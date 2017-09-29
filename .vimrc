@@ -86,6 +86,16 @@ if !has("compatible")
     " Show number of matches when searching
     Plug 'henrik/vim-indexed-search'
 
+    " Color code nested parens
+    Plug 'junegunn/rainbow_parentheses.vim'
+        au VimEnter * RainbowParentheses
+
+    " Git wrapper for vim
+    Plug 'tpope/vim-fugitive'
+
+    " Fuzzy file finder
+    Plug 'ctrlpvim/ctrlp.vim'
+
     call plug#end()
 endif
 
@@ -159,8 +169,8 @@ set ttyfast                 " Faster redraw, sends more characters to be redrawn
 set whichwrap+=<,>,h,l,[,]  " Allow the cursor to wrap lines
 set ignorecase              " Ignore charater case when searching
 set smartcase               " Overrides ignore case if search term has capital
-set autowrite
 set backspace=2             " Allows backspace to function as expected
+set autoindent              " Copy indent from current line when starting new one
 
 " Disable things that anger crontab (at least on MacOSX)
 if $VIM_CRONTAB == "true"
@@ -179,6 +189,10 @@ endif
 " Actual status line should come from vim-airline
 if has('statusline')
     set laststatus=2
+endif
+
+if exists ("&wildignore")
+    set wildignore+=*.pyc,*.bak,*.swp,*.swo
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -231,6 +245,18 @@ nnoremap <leader>r :!%:p<cr>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<CR>:nohl<CR>
+
+" Toggle NERDTree
+map <C-N> :NERDTreeToggle<CR>
+
+" Copy selected text to OS clipboard
+noremap <leader>y "+y
+" Copy entire line to OS clipboard
+noremap <leader>Y "+yy
+
+" Paste from the OS clipboard
+noremap <leader>p "+p
+noremap <leader>P "+p
 
 "
 " Buffer keys
