@@ -96,6 +96,9 @@ if !has("compatible")
     " Fuzzy file finder
     Plug 'ctrlpvim/ctrlp.vim'
 
+    " Tagbar
+    Plug 'majutsushi/tagbar'
+
     call plug#end()
 endif
 
