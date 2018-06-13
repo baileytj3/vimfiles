@@ -205,10 +205,10 @@ endif
 let mapleader = "\<Space>"
 
 " Disable arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+nnoremap <up> :resize +2<CR>
+nnoremap <down> :resize -2<CR>
+nnoremap <left> :vertical resize +2<CR>
+nnoremap <right> :vertical resize -2<CR>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
