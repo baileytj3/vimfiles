@@ -68,8 +68,10 @@ if !has("compatible")
 
     " NERD Tree
     Plug 'scrooloose/nerdtree'
-        " Ignore .pyc files
-        let g:NERDTreeIgnore = ['\.pyc$']
+        " Show hidden files
+        let g:NERDTreeShowHidden=1
+        " Ignore files list
+        let g:NERDTreeIgnore = ['\.pyc$', '\.swp$']
         " Prevent switching to an open buffer while focus is on NERDTree
         autocmd FileType nerdtree noremap <buffer> <leader>h <nop>
         autocmd FileType nerdtree noremap <buffer> <leader>l <nop>
