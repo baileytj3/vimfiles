@@ -180,6 +180,8 @@ set ignorecase              " Ignore charater case when searching
 set smartcase               " Overrides ignore case if search term has capital
 set backspace=2             " Allows backspace to function as expected
 set autoindent              " Copy indent from current line when starting new one
+set incsearch               " Start searching before pressing enter
+set wildmenu                " Show tab completions for vim commands
 
 " Disable things that anger crontab (at least on MacOSX)
 if $VIM_CRONTAB == "true"
