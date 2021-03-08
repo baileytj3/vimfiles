@@ -64,10 +64,11 @@ if !has("compatible")
         " <leader>hv - Preview hunk
 
     " Syntax Checking
-    Plug 'scrooloose/syntastic'
+    Plug 'vim-syntastic/syntastic'
+    let g:syntastic_yaml_checkers = ['yamllint']
 
     " NERD Tree
-    Plug 'scrooloose/nerdtree'
+    Plug 'preservim/nerdtree'
         " Show hidden files
         let g:NERDTreeShowHidden=1
         " Ignore files list
@@ -78,9 +79,12 @@ if !has("compatible")
         autocmd bufenter * if (winnr("$") == 1
                     \ && exists("b:NERDTree")
                     \ && b:NERDTree.isTabTree()) | q | endif
+        " Start NERDTree when Vim is started without file arguments.
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
     " NERD Commenter
-    Plug 'scrooloose/nerdcommenter'
+    Plug 'preservim/nerdcommenter'
 
     " Display indentation levels with vertical lines
     Plug 'Yggdroot/indentLine'
