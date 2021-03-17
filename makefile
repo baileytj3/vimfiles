@@ -4,7 +4,7 @@ default: install
 .PHONY: install
 install: link-folder link-file vim-plug plugins
 
-.PHONY: install
+.PHONY: vim-plug
 vim-plug:
 	@echo "==> Downloading vim-plug"
 	@mkdir -p $(CURDIR)/autoload
