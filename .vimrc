@@ -72,7 +72,7 @@ if !has("compatible")
         " Show hidden files
         let g:NERDTreeShowHidden=1
         " Ignore files list
-        let g:NERDTreeIgnore = ['\.pyc$', '\.swp$']
+        let g:NERDTreeIgnore = ['\.pyc$', '\.swp$', '__pycache__$']
         " Prevent switching to an open buffer while focus is on NERDTree
         autocmd FileType nerdtree noremap <buffer> <leader>h <nop>
         autocmd FileType nerdtree noremap <buffer> <leader>l <nop>
