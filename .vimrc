@@ -105,6 +105,9 @@ if !has("compatible")
     " Tagbar
     Plug 'majutsushi/tagbar'
 
+    " Autogen Tags
+    Plug 'craigemery/vim-autotag'
+
     call plug#end()
 endif
 
